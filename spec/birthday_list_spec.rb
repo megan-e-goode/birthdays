@@ -40,4 +40,12 @@ describe Birthday do
     )
     expect(bday.check).to eql(true)
   end
+
+  it '.check todays date against birthdays excluding match' do
+    bday.birthday_list.push(
+      { name: "Me", dob: "1996-04-17" },
+      { name: "Jen", dob: "1994-08-19" }
+    )
+    expect(bday.check).to eql(false)
+  end
 end
