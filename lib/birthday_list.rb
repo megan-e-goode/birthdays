@@ -13,4 +13,8 @@ class Birthday
       puts "#{item[:name]}, #{item[:dob]}"
     end
   end
+
+  def check
+    
+  end
 end
