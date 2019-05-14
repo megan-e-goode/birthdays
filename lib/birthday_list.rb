@@ -1,3 +1,5 @@
+require 'date'
+
 class Birthday
   attr_reader :birthday_list
   def initialize
@@ -15,6 +17,6 @@ class Birthday
   end
 
   def check
-    
+    Date.today.to_s
   end
 end

@@ -41,4 +41,8 @@ describe Birthday do
   it 'Birthday responds to .check' do
     expect(bday).to respond_to(:check)
   end
+
+  it '.check for todays date' do
+    expect(bday.check).to eql("2019-05-14")
+  end
 end
