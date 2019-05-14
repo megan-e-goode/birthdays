@@ -33,7 +33,11 @@ describe Birthday do
     expect(bday).to respond_to(:check)
   end
 
-  it '.check for todays date' do
-    expect(bday.check).to eql("2019-05-14")
+  it '.check todays date against birthdays including match' do
+    bday.birthday_list.push(
+      { name: "Me", dob: "1996-04-17" },
+      { name: "Jen", dob: "2019-05-14" }
+    )
+    expect(bday.check).to eql(true)
   end
 end

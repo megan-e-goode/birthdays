@@ -2,6 +2,8 @@ require 'date'
 
 class Birthday
   attr_reader :birthday_list
+  attr_reader :birthday_list
+  
   def initialize
     @birthday_list = []
   end
@@ -17,6 +19,10 @@ class Birthday
   end
 
   def check
-    Date.today.to_s
+    today = Date.today.to_s
+    @birthday_list.each do |item|
+      return true if item.has_value?(today)
+    end
+    return false
   end
 end
