@@ -16,4 +16,9 @@ describe Birthday do
     bday = Birthday.new
     expect {bday.add("Me", "1996-04-17")}.to_not raise_error
   end
+
+  it '.add returns an array' do
+    bday = Birthday.new
+    expect(bday.add("Me", "1996-04-17")).to be_instance_of(Array)
+  end
 end
