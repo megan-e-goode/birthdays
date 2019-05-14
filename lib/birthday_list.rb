@@ -5,11 +5,12 @@ class Birthday
   end
 
   def add(name, dob)
-    @birthday_list.push([name: name, dob: dob])
-    @birthday_list
+    @birthday_list.push({ name: name, dob: dob })
   end
 
   def show
-    @birthday_list
+    @birthday_list.each do |item|
+      puts "#{item[:name]}, #{item[:dob]}"
+    end
   end
 end
