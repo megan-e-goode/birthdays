@@ -36,4 +36,9 @@ describe Birthday do
   it '.show displays list of birthdays' do
     expect(bday.show).to eql(bday.birthday_list)
   end
+
+  # Check
+  it 'Birthday responds to .check' do
+    expect(bday).to respond_to(:check)
+  end
 end
