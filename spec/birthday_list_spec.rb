@@ -38,7 +38,7 @@ describe Birthday do
       { name: "Me", dob: "1996-04-17" },
       { name: "Jen", dob: "2019-05-14" }
     )
-    expect(bday.check).to eql(true)
+    expect(bday.check).to eql("It's Jen's birthday today!")
   end
 
   it '.check todays date against birthdays excluding match' do
