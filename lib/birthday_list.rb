@@ -5,4 +5,8 @@ class Birthday
 
     birthday_list
   end
+
+  def show
+
+  end
 end

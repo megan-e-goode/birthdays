@@ -16,4 +16,8 @@ describe Birthday do
   it '.add returns an array' do
     expect(bday.add("Me", "1996-04-17")).to be_instance_of(Array)
   end
+
+  it 'Birthday responds to .show' do
+    expect(bday).to respond_to(:show)
+  end
 end
