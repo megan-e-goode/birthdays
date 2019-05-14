@@ -5,6 +5,7 @@ describe Birthday do
     Birthday.new
   }
 
+  # Add
   it 'create instance of Birthday' do
     expect(bday).to be_instance_of(Birthday)
   end
@@ -19,5 +20,10 @@ describe Birthday do
 
   it 'Birthday responds to .show' do
     expect(bday).to respond_to(:show)
+  end
+
+  # Show
+  it '.show displays list of birthdays' do
+    expect(bday.show).to eql(bday.birthday_list)
   end
 end
