@@ -2,7 +2,6 @@ require 'date'
 
 class Birthday
   attr_reader :birthday_list
-  attr_reader :birthday_list
 
   def initialize
     @birthday_list = []
@@ -19,9 +18,13 @@ class Birthday
   end
 
   def check
-    today = Date.today.to_s
+    today = Date.today.to_s.split("-")
+    today_year = today[0].to_i
+
     @birthday_list.each do |item|
-      return "It's #{item[:name]}'s birthday today!" if item.has_value?(today)
+      b_split = item[:dob].split("-") # [0] - year, [1] - month, [2] - day
+      return "It's #{item[:name]}'s birthday today! They are #{
+        today_year - b_split[0].to_i} years old!" if "#{b_split[1]}-#{b_split[2]}" == "#{today[1]}-#{today[2]}"
     end
     return false
   end
